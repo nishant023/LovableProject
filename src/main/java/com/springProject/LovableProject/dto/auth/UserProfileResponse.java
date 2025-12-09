@@ -1,4 +1,9 @@
 package com.springProject.LovableProject.dto.auth;
 
-public record UserProfileResponse(Long id, String email, String name, String avatarUrl) {
+public record UserProfileResponse(
+        Long id,
+        String email,
+        String name,
+        String avatarUrl
+) {
 }

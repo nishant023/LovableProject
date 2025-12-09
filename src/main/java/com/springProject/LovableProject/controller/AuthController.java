@@ -1,6 +1,9 @@
 package com.springProject.LovableProject.controller;
 
-import com.springProject.LovableProject.dto.auth.*;
+import com.springProject.LovableProject.dto.auth.AuthResponse;
+import com.springProject.LovableProject.dto.auth.LoginRequest;
+import com.springProject.LovableProject.dto.auth.SignupRequest;
+import com.springProject.LovableProject.dto.auth.UserProfileResponse;
 import com.springProject.LovableProject.service.AuthService;
 import com.springProject.LovableProject.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -20,8 +23,7 @@ public class AuthController {
 
     @PostMapping("/signup")
     public ResponseEntity<AuthResponse> signUp(SignupRequest request) {
-        //here we are not manually creating object of response entity, spring will create by the help
-        // of the ok() method.
+        //here we are not manually creating object of response entity, spring will create by the help of the ok() method.
         return ResponseEntity.ok(authService.signup(request));
     }
 
@@ -31,9 +33,8 @@ public class AuthController {
     }
 
     @GetMapping("me")
-    public ResponseEntity<UserProfileResponse> getProfile() {//here I will not provide the id bcs id will
-        // be got by the spring security.
-        Long userId = 1L;
+    public ResponseEntity<UserProfileResponse> getProfile() {
+        Long userId = 1L;//fetch by spring security
         return ResponseEntity.ok(userService.getProfile(userId));
     }
 
