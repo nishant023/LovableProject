@@ -13,7 +13,6 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/projects/{projectId}/members")
 public class BillingController {
 
     private final PlanService planService;
