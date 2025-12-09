@@ -4,7 +4,6 @@ package com.springProject.LovableProject.controller;
 import com.springProject.LovableProject.dto.project.FileContentResponse;
 import com.springProject.LovableProject.dto.project.FileNode;
 import com.springProject.LovableProject.service.FileService;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
