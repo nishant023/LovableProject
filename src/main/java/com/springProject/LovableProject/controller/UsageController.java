@@ -3,7 +3,6 @@ package com.springProject.LovableProject.controller;
 import com.springProject.LovableProject.dto.subscription.PlanLimitsResponse;
 import com.springProject.LovableProject.dto.subscription.UsageTodayResponse;
 import com.springProject.LovableProject.service.UsageService;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,13 +17,14 @@ public class UsageController {
     private final UsageService usageService;
 
     @GetMapping("/today")
-    public ResponseEntity<UsageTodayResponse>getUsageTodayResponse(){
-        Long userId=1L;
-        return ResponseEntity.ok(usageService.getTodayUsageofUser(userId));
+    public ResponseEntity<UsageTodayResponse> getUsageTodayResponse() {
+        Long userId = 1L;
+        return ResponseEntity.ok(usageService.getTodayUsageOfUser(userId));
     }
+
     @GetMapping("/limits")
-    public ResponseEntity<PlanLimitsResponse>getPlanLimits(){
-        Long userId=1L;
+    public ResponseEntity<PlanLimitsResponse> getPlanLimits() {
+        Long userId = 1L;
         return ResponseEntity.ok(usageService.getCurrentSubscriptionLimitOfUser(userId));
     }
 }
