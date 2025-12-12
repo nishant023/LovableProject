@@ -21,7 +21,7 @@ public class ProjectController {
     @GetMapping
     public ResponseEntity<List<ProjectSummaryResponse>> getAllProjects() {
         Long userId = 1L;//spring security
-        return ResponseEntity.ok(projectService.getAllProjects(userId));
+        return ResponseEntity.ok(projectService.getUserProjects(userId));
     }
 
 
